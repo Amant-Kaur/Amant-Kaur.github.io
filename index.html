@@ -13,6 +13,7 @@
         </div>
     </div>
 </nav>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,24 +21,31 @@
   <title>Portfolio</title>
   <style>
 
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+    .hero-image {
+      position: relative;
+      height: 50%;
+      overflow: hidden; /* ensures blur doesn't spill outside */
     }
 
-    .hero-image {
+    .hero-image::before {
+      content: "";
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image_one.jpg");
-      height: 50%;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      filter: blur(3px); /* you can increase or decrease the blur here */
+      z-index: 1;
     }
 
     .hero-text {
       text-align: center;
-      position: absolute;
+      position: relative;
+      z-index: 2; /* ensure text appears above the blurred background */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -48,14 +56,14 @@
 </head>
 <body>
 
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">Portfolio</h1>
-    <p>Engineer</p>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1 style="font-size:50px">Portfolio</h1>
+      <p>Engineer</p>
+    </div>
   </div>
-</div>
 
-<p>Page Content..</p>
+  <p>Page Content..</p>
 
 </body>
 </html>
