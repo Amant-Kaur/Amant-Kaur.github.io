@@ -20,24 +20,42 @@
   <title>Portfolio</title>
   <style>
 
-    .hero {
-      background-image: url('image_one.jpg');
-      background-size: cover;
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image_one.jpg");
+      height: 50%;
       background-position: center;
       background-repeat: no-repeat;
-      color: rgb(80, 163, 241);
+      background-size: cover;
+      position: relative;
+    }
+
+    .hero-text {
       text-align: center;
-      padding: 100px 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
     }
 
   </style>
 </head>
 <body>
 
-  <div style="background-color: #000000; color: rgb(80, 163, 241); padding: 60px 20px; text-align: center;">
-      <h1 style="font-size: 2.5em; margin-bottom: 20px;">Portfolio</h1>
-      <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 30px;">Website Version 1.0.</p>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Portfolio</h1>
+    <p>Engineer</p>
   </div>
+</div>
+
+<p>Page Content..</p>
 
 </body>
 </html>
